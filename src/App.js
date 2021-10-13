@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom"
+import Navbar from './components/layouts/Navbar'
+import Dashboard from './components/dashboard/Dashboard'
+import Footer from './components/layouts/Footer'
+import Blogdetails from './components/projects/Blogdetails'
+import Createblog from "./components/projects/Createblog"
+import Login  from "./components/auth/Login"
+import Signup  from "./components/auth/Signup"
+import Home from "./components/layouts/Home"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter > 
+    <div className="App bg-gray-900 h-auto w-full pb-10 pt-0">
+    <Navbar />
+    <Route exact path='/Dashboard' component ={ Dashboard } />
+    <Route exact path='/Login' component ={ Login } />
+    <Route exact path='/Signup' component ={ Signup } />
+    <Route exact path='/' component ={ Home } />
+    <Route exact path='/Create' component ={ Createblog } />
+    <Route exact path='/posts:id' component ={ Blogdetails } />
+    <Footer />
     </div>
+
+    </BrowserRouter>
   );
 }
 

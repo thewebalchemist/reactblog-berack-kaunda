@@ -1,0 +1,7 @@
+{
+    "tailwindCSS.experimental.classRegex": [
+
+
+    ],
+    "tailwindCSS.includeLanguages": { "plaintext": "javascript" }
+}
