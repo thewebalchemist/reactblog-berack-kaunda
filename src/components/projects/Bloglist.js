@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import Blogsummary from '../dashboard/Blogsummary'
 import { fetchPosts } from '../../store/actions/blogActions'
 import { Link } from 'react-router-dom'
+import Home from '../layouts/Home'
 
 const Bloglist = ({ dispatch, loading, posts, hasErrors }) =>{
-
+    <Home posts={posts} />
+    console.log(posts)
     useEffect(() => {
         dispatch(fetchPosts())
     }, [dispatch])
@@ -20,8 +22,8 @@ const Bloglist = ({ dispatch, loading, posts, hasErrors }) =>{
       </button>
         if (hasErrors) return <p className='text-white font-bold'>Unable to display posts.</p>
         return  posts.map((post) =>
-        <Link to={ '/posts/' + post.id}>
-        <Blogsummary key={post.id} post={post} />
+        <Link to={ '/posts/' + post.title}>
+        <Blogsummary key={post.title} post={post} />
         </Link>
         )
     }

@@ -1,9 +1,23 @@
 import React from 'react'
 import Bloglist from '../projects/Bloglist'
 import Recents from '../dashboard/Recents'
+import Blogsummary from '../dashboard/Blogsummary'
 import pingImage from '../../images/ping.png'
 
-const Home = () =>{
+const Home = ( { posts }) =>{
+
+    const DevelopmentOption = () => {}
+    const CareerOption = () => {
+        return  <Bloglist />
+    }
+    const Option = (event) => {
+        if (event.target.value === 'career'){
+            return CareerOption();
+        }else if(event.target.value === 'development'){
+            return posts.map((post) =>
+        <Blogsummary key={post.id} post={post} />)
+        }  
+    }
         return(
             
             <blogs>
@@ -19,8 +33,8 @@ const Home = () =>{
                                 <h1 className='p-2'>
                                     Filter By Category: 
                                     
-                                </h1>
-                                <select className=" border border-white bg-transparent rounded p-2 "  name="category">
+                                </h1> 
+                                <select onChange={(event) => Option(event)}className=" border border-white bg-transparent rounded p-2 "  name="category">
                                     <option className="text-gray-600" value="development">Development</option>
                                     <option className="text-gray-600" value="career">Career</option>
                                     <option className="text-gray-600" value="marketing">Marketing</option>
@@ -28,7 +42,7 @@ const Home = () =>{
                             </div>
                         </div>
                         <div>
-                            <Bloglist />
+                           {Option()}
                         </div>                        
                     </div>
                     <div class="hidden md:block col overflow-hidden border border-gray-400 rounded text-white">
