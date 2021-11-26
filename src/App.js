@@ -12,7 +12,7 @@ import Home from "./components/layouts/Home"
 function App() {
   return (
     <BrowserRouter > 
-    <div className="App bg-gray-900 h-auto w-full pb-10 pt-0">
+    <div className="App bg-gray-900 h-auto w-full pt-0">
     <Navbar />
     <Route exact path='/Dashboard' component ={ Dashboard } />
     <Route exact path='/Login' component ={ Login } />

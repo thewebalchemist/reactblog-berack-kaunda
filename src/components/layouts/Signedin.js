@@ -11,11 +11,6 @@ const Signedin = () => {
                 <div className="  lg:block">
                 <div className='dropdown relative block float-right m-4 '>                
                     <img className=" profilePic whenLoggedIn cursor-pointer h-12 rounded-full" src={ favicon } alt="" />
-                    <div className='absolute z-50 bg-yellow-400'>
-                        <a className='  text-black p-2 no-underline block hover:bg-gray-900 ' href="#">Link 1 hrveggegege</a>
-                        <a className=' text-black p-2 no-underline block hover:bg-gray-900 ' href="#">Link 2</a>
-                        <a className=' text-black p-2 no-underline block hover:bg-gray-900 ' href="#">Link 3</a>
-                    </div>
                 </div>
                 <div>
                     <div>
